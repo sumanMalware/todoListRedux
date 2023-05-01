@@ -20,7 +20,7 @@ const TodoLanding = () => {
         <button
           className="add-todo-item"
           onClick={() => {
-            dispatch(addTodo(inputData));
+            if (inputData !== '') dispatch(addTodo(inputData));
             setinputData("");
           }}
         >
