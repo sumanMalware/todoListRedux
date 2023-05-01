@@ -1,11 +1,11 @@
 import { React, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "./App.css";
-import { addTodo, deleteTo, removeAll} from "./actions/index";
+import "./css/TodoList.css";
+import { addTodo, deleteTo, removeAll } from "./actions/index";
 
-const App = () => {
+const TodoLanding = () => {
   const [inputData, setinputData] = useState("");
-  const list = useSelector((state) =>state.todoReducer.list);
+  const list = useSelector((state) => state.todoReducer.list);
   const dispatch = useDispatch();
   return (
     <div className="todomain">
@@ -46,12 +46,13 @@ const App = () => {
               );
             })}
           </div>
-        <button className="remove-all" onClick={()=>dispatch
-        (removeAll())}>Remove All</button>
+          <button className="remove-all" onClick={() => dispatch(removeAll())}>
+            Remove All
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default App;
+export default TodoLanding;

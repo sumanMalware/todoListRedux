@@ -1,39 +1,37 @@
-
-body{
+body {
   background-color: #464646;
 }
-.mainContainer{
+.mainContainer {
   display: flex;
   justify-content: center;
   margin-top: 50px;
   flex-direction: column;
 }
 
-.todolistinputbox{
+.todolistinputbox {
   height: 30px;
   width: 300px;
-  border: 1px solid black;  
+  border: 1px solid black;
   border-radius: 6px;
   padding: 1px;
-
 }
 
-.todomain{
+.todomain {
   display: flex;
   justify-content: center;
 }
 
 .add-todo-item {
   width: 100px;
-  background: #FF4742;
-  border: 1px solid #FF4742;
+  background: #ff4742;
+  border: 1px solid #ff4742;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 16px;
@@ -53,14 +51,14 @@ body{
 .add-todo-item:active {
   background-color: initial;
   background-position: 0 0;
-  color: #FF4742;
+  color: #ff4742;
 }
 
 .add-todo-item:active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.show-item{
+.show-item {
   height: 20px;
   width: 100px;
 }

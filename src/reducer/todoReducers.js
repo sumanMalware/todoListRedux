@@ -17,21 +17,22 @@ const todoReducer = (state = initialData, action) => {
         ],
       };
 
-    case "DELETE_TODO" :
-       const newLIst =  state.list.filter((elem)=> elem.id !== action.id)
-        return{
-            ...state,
-            list :newLIst
-          };
+    case "DELETE_TODO":
+      const newLIst = state.list.filter((elem) => elem.id !== action.id);
+      return {
+        ...state,
+        list: newLIst,
+      };
 
     case "REMOVE_ALL":
-        return {
-            ...state,
-            list: []
-        }
- 
-      default:  return state;
-    }
+      return {
+        ...state,
+        list: [],
+      };
+
+    default:
+      return state;
+  }
 };
 
-export default todoReducer 
+export default todoReducer;
