@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import "./App.css";
+import { addTodo, deleteTo, removeAll} from "./actions/index";
 
-function App() {
+const App = () => {
+  const [inputData, setinputData] = useState("");
+  const list = useSelector((state) =>state.todoReducer.list);
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="todomain">
+      <div className="mainContainer">
+        Add your list here
+        <input
+          className=" todolistinputbox"
+          placeholder="your items"
+          value={inputData}
+          onChange={(event) => setinputData(event.target.value)}
+        ></input>
+        <button
+          className="add-todo-item"
+          onClick={() => {
+            dispatch(addTodo(inputData));
+            setinputData("");
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Add Item
+        </button>
+        <div className="show-item">
+          <div className="each-item">
+            {list.map((elem) => {
+              return (
+                <div>
+                  {elem.data}
+
+                  <button
+                    className="delete-todo-item"
+                    key={elem.id}
+                    onClick={() => {
+                      dispatch(deleteTo(elem.id));
+                    }}
+                  >
+                    delete Item
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        <button className="remove-all" onClick={()=>dispatch
+        (removeAll())}>Remove All</button>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
